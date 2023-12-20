@@ -1,0 +1,87 @@
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_data_factory.datafactory will be created
+  + resource "azurerm_data_factory" "datafactory" {
+      + id                     = (known after apply)
+      + location               = "westeurope"
+      + name                   = "example"
+      + public_network_enabled = true
+      + resource_group_name    = "example-resources"
+    }
+
+  # azurerm_databricks_workspace.databricks will be created
+  + resource "azurerm_databricks_workspace" "databricks" {
+      + customer_managed_key_enabled          = false
+      + id                                    = (known after apply)
+      + infrastructure_encryption_enabled     = false
+      + location                              = "westeurope"
+      + managed_resource_group_id             = (known after apply)
+      + managed_resource_group_name           = (known after apply)
+      + name                                  = "databricks-test"
+      + network_security_group_rules_required = (known after apply)
+      + public_network_access_enabled         = true
+      + resource_group_name                   = "example-resources"
+      + sku                                   = "standard"
+      + storage_account_identity              = (known after apply)
+      + tags                                  = {
+          + "Environment" = "Production"
+        }
+      + workspace_id                          = (known after apply)
+      + workspace_url                         = (known after apply)
+    }
+
+  # azurerm_dns_a_record.example will be created
+  + resource "azurerm_dns_a_record" "example" {
+      + fqdn                = (known after apply)
+      + id                  = (known after apply)
+      + name                = "test"
+      + records             = [
+          + "10.0.180.17",
+        ]
+      + resource_group_name = "example-resources"
+      + ttl                 = 300
+      + zone_name           = "mydomain.com"
+    }
+
+  # azurerm_dns_zone.example will be created
+  + resource "azurerm_dns_zone" "example" {
+      + id                        = (known after apply)
+      + max_number_of_record_sets = (known after apply)
+      + name                      = "mydomain.com"
+      + name_servers              = (known after apply)
+      + number_of_record_sets     = (known after apply)
+      + resource_group_name       = "example-resources"
+    }
+
+  # azurerm_resource_group.databricks will be created
+  + resource "azurerm_resource_group" "databricks" {
+      + id       = (known after apply)
+      + location = "westeurope"
+      + name     = "example-resources"
+    }
+
+  # azurerm_resource_group.datafactory will be created
+  + resource "azurerm_resource_group" "datafactory" {
+      + id       = (known after apply)
+      + location = "westeurope"
+      + name     = "example-resources"
+    }
+
+  # azurerm_resource_group.example will be created
+  + resource "azurerm_resource_group" "example" {
+      + id       = (known after apply)
+      + location = "westeurope"
+      + name     = "example-resources"
+    }
+
+  # azurerm_resource_group.example1 will be created
+  + resource "azurerm_resource_group" "example1" {
+      + id       = (known after apply)
+      + location = "westeurope"
+      + name     = "example"
+    }
+
+Plan: 8 to add, 0 to change, 0 to destroy.
